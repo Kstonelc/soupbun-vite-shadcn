@@ -8,6 +8,7 @@ import {
   Send,
   Settings2,
   SquareTerminal,
+  BookCheck,
 } from "lucide-react";
 
 const routes = {
@@ -18,66 +19,20 @@ const routes = {
   },
   navMain: [
     {
-      title: "Playground",
+      title: "考场",
       url: "#",
-      icon: SquareTerminal,
+      icon: BookCheck,
       isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
     },
     {
-      title: "Models",
-      url: "#",
+      title: "题库",
+      url: "#/questions",
       icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
     },
     {
-      title: "Documentation",
+      title: "试卷",
       url: "#",
       icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
     },
     {
       title: "Settings",
