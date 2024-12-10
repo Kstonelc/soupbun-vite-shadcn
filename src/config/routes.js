@@ -7,7 +7,6 @@ import {
   PieChart,
   Send,
   Settings2,
-  SquareTerminal,
   BookCheck,
 } from "lucide-react";
 
@@ -20,13 +19,13 @@ const routes = {
   navMain: [
     {
       title: "考场",
-      url: "#",
+      url: "/",
       icon: BookCheck,
       isActive: true,
     },
     {
       title: "题库",
-      url: "#/questions",
+      url: "/question",
       icon: Bot,
     },
     {

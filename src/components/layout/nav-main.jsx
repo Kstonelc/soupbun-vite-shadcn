@@ -1,5 +1,3 @@
-"use client";
-
 import { ChevronRight } from "lucide-react";
 import {
   Collapsible,
@@ -17,8 +15,10 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { Link } from "react-router-dom";
 
 export function NavMain({ items }) {
+  console.log(items);
   return (
     <SidebarGroup>
       <SidebarGroupLabel>题库</SidebarGroupLabel>
@@ -27,11 +27,11 @@ export function NavMain({ items }) {
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title}>
-                  <a href={item.url} className="flex items-center">
+                <SidebarMenuButton tooltip={item.title} asChild>
+                  <Link className="flex items-center" to={item.url}>
                     <item.icon className={"w-5 h-5"} />
                     <span className="ml-2">{item.title}</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </CollapsibleTrigger>
               {item.items?.length ? (
