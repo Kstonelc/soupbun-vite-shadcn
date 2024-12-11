@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Command } from "lucide-react";
 
-import { NavMain } from "./nav-main";
-import { NavSecondary } from "./nav-secondary";
-import { NavUser } from "./nav-user";
+import { NavMain } from "./navMain.jsx";
+import { NavSecondary } from "./navSecondary.jsx";
+import { NavUser } from "./navUser.jsx";
 import {
   Sidebar,
   SidebarContent,

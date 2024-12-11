@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MonitorDot } from "lucide-react";
 import {
   Collapsible,
   CollapsibleContent,
@@ -18,10 +18,18 @@ import {
 import { Link } from "react-router-dom";
 
 export function NavMain({ items }) {
-  console.log(items);
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>题库</SidebarGroupLabel>
+      <SidebarMenuButton tooltip="控制台" asChild className={"mb-2"}>
+        <Link
+          className="flex items-center bg-blue-400 hover:bg-blue-400"
+          to={"/"}
+        >
+          <MonitorDot className={"w-5 h-5 text-white"} />
+          <span className="ml-2 text-white">控制台</span>
+        </Link>
+      </SidebarMenuButton>
+      <SidebarGroupLabel className={"text-sm"}>技术测评</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
