@@ -19,7 +19,7 @@ const routes = {
   navMain: [
     {
       title: "考场",
-      url: "/",
+      url: "/exam",
       icon: BookCheck,
       isActive: true,
     },
@@ -27,32 +27,31 @@ const routes = {
       title: "题库",
       url: "/question",
       icon: Bot,
+      items: [
+        {
+          title: "newQuestion",
+          url: "/question/new",
+          hide: true, // 菜单隐藏
+        },
+      ],
     },
     {
       title: "试卷",
-      url: "#",
+      url: "/exam-paper",
       icon: BookOpen,
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: Settings2,
       items: [
         {
           title: "General",
-          url: "#",
+          url: "/settings/general",
         },
         {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
+          title: "General1",
+          url: "/settings/general1",
         },
       ],
     },
@@ -60,12 +59,12 @@ const routes = {
   navSecondary: [
     {
       title: "Support",
-      url: "#",
+      url: "/support",
       icon: LifeBuoy,
     },
     {
       title: "Feedback",
-      url: "#",
+      url: "/feedback",
       icon: Send,
     },
   ],

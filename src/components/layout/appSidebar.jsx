@@ -15,24 +15,28 @@ import {
 } from "@/components/ui/sidebar";
 
 import routes from "@/config/routes";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ModeToggle } from "@/components/common/modeToogle";
 
 export function AppSidebar({ ...props }) {
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
         <SidebarMenu>
-          <SidebarMenuItem>
+          <SidebarMenuItem
+            className={"flex flex-row justify-between items-center"}
+          >
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Command className="size-4" />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
-                </div>
+              <a href="/">
+                <Avatar className="h-8 w-4/5 rounded-lg">
+                  <AvatarImage src="/public/icon/soupbun.svg" alt="@shadcn" />
+                  <AvatarFallback className="rounded-lg">
+                    SoupBun
+                  </AvatarFallback>
+                </Avatar>
               </a>
             </SidebarMenuButton>
+            <ModeToggle />
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
