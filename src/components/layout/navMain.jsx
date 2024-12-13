@@ -23,32 +23,26 @@ export function NavMain({ items }) {
   const checkIsActive = (item) => {
     return location.pathname === item.url;
   };
+
   return (
     <SidebarGroup>
       <SidebarMenuButton tooltip="控制台" asChild className={"mb-2"}>
-        <Link
-          className="flex items-center  hover:!bg-gray-200 bg-gray-100"
-          to={"/"}
-        >
+        <Link className={"hover:bg-sidebar-router-hover"} to={"/"}>
           <MonitorDot className={"w-5 h-5"} />
           <span className="ml-2">控制台</span>
         </Link>
       </SidebarMenuButton>
-      <SidebarGroupLabel className={"text-sm"}>技术测评</SidebarGroupLabel>
+      <SidebarGroupLabel className={"text-sm "}>技术测评</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => {
-          const isMainActive = checkIsActive(item);
+          // const isMainActive = checkIsActive(item);
           return (
             <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
               <SidebarMenuItem>
                 <SidebarMenuButton tooltip={item.title} asChild>
                   <Link
-                    className={`flex items-center p-2 ${
-                      isMainActive
-                        ? "bg-blue-400 text-white hover:!bg-blue-400 hover:!text-white"
-                        : "hover:!bg-gray-200"
-                    }`}
                     to={item.url}
+                    className={"hover:bg-sidebar-router-hover"}
                   >
                     <item.icon className={"w-5 h-5"} />
                     <span className="ml-2">{item.title}</span>
@@ -60,25 +54,19 @@ export function NavMain({ items }) {
                     <CollapsibleTrigger asChild>
                       <SidebarMenuAction className="data-[state=open]:rotate-90">
                         <ChevronRight
-                          className={`${
-                            isMainActive ? " text-white " : "hover:bg-gray-200"
-                          }`}
+                        // className={`${isMainActive ? " text-white " : null}`}
                         />
                       </SidebarMenuAction>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
                       <SidebarMenuSub>
                         {item.items?.map((subItem) => {
-                          const isSubActive = checkIsActive(subItem);
+                          // const isSubActive = checkIsActive(subItem);
                           return (
                             <SidebarMenuSubItem key={subItem.title}>
                               <SidebarMenuSubButton asChild>
                                 <Link
-                                  className={`flex items-center p-2 ${
-                                    isSubActive
-                                      ? "bg-blue-400 text-white hover:!bg-blue-300"
-                                      : "hover:!bg-gray-200"
-                                  }`}
+                                  className={"hover:bg-sidebar-router-hover"}
                                   to={subItem.url}
                                 >
                                   <span>{subItem.title}</span>

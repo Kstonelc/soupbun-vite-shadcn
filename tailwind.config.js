@@ -60,6 +60,7 @@ module.exports = {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+          "router-hover": "hsl(var(--router-hover))",
         },
       },
     },

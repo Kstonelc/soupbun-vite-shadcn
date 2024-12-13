@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import soupBunHelper from "@/SoupBunHelper.js";
+import { QuestionType } from "@/Enum.js";
 
 const Question = () => {
   return (
@@ -31,16 +32,18 @@ const Question = () => {
               <TabsContent value="teamQuestion">
                 <Card
                   onClick={() => {
-                    soupBunHelper.navigate("question/new");
+                    soupBunHelper.navigate(
+                      `question/new?questionType=${QuestionType.gapFill}`,
+                    );
                   }}
                   className={
-                    "p-5 flex flex-row justify-between items-center hover:bg-blue-50"
+                    "p-5 mb-3 flex flex-row justify-between items-center "
                   }
                 >
                   <div className={"flex flex-row justify-center items-center"}>
-                    <Avatar className={"h-10 w-10 p-2 bg-gray-100"}>
+                    <Avatar className={"h-10 w-10 p-2"}>
                       <AvatarImage
-                        src="/public/icon/gap-fill.svg"
+                        src="/public/icon/gapFill.svg"
                         alt="@shadcn"
                       />
                       <AvatarFallback>SoupBun</AvatarFallback>
@@ -55,10 +58,10 @@ const Question = () => {
                     "p-5 flex flex-row justify-between items-center hover:bg-blue-50"
                   }
                 >
-                  <div className={"flex flex-row justify-center items-center "}>
+                  <div className={"flex flex-row justify-center items-center"}>
                     <Avatar className={"h-10 w-10 p-2 bg-gray-100"}>
                       <AvatarImage
-                        src="/public/icon/gap-fill.svg"
+                        src="/public/icon/choiceQuestion.svg"
                         alt="@shadcn"
                       />
                       <AvatarFallback>SoupBun</AvatarFallback>

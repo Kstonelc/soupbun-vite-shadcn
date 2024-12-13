@@ -27,7 +27,7 @@ export default function App() {
             <Route path="/question" element={<Question />} />
             <Route path="/exam" element={<Exam />} />
             <Route path="/exam-paper" element={<ExamPaper />} />
-            <Route path="/new-question" element={<NewQuestion />} />
+            <Route path="/question/new" element={<NewQuestion />} />
           </Routes>
         </Layout>
       </Router>
