@@ -10,4 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  compilerOptions: {
+    jsx: "react-jsx", // For React 17+ syntax
+  },
 });

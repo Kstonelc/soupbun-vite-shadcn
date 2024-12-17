@@ -1,5 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { Checkbox, Input, message, Select } from "antd";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 
 const CustomOption = ({
@@ -15,15 +16,15 @@ const CustomOption = ({
   return (
     <div
       className={
-        "bg-gray-100  w-1/2 rounded-xl flex justify-start flex-col p-5 gap-2 mb-5"
+        "border w-1/2 rounded-xl flex justify-start flex-col p-3 gap-2 mb-3"
       }
     >
       <div className={"flex justify-between px-2"}>
         <div>选项{name}</div>
-        <div className={"flex flex-row"}>
+        <div className={"flex flex-row items-center"}>
           <Checkbox
             defaultChecked={isChecked}
-            className={"text-blue-500"}
+            className={"text-blue-500 mr-2"}
             onChange={() => onConfirmTrueAnswer(key)}
           >
             设置为正确答案
@@ -86,7 +87,7 @@ const QuestionOptions = forwardRef(({ ...props }, ref) => {
 
   const deleteOption = (key) => {
     if (options.length === 1) {
-      message.warning("选项不可以少于一个");
+      // message.warning("选项不可以少于一个");
       return;
     }
     for (let option of options) {
@@ -114,22 +115,22 @@ const QuestionOptions = forwardRef(({ ...props }, ref) => {
   // endregion
   return (
     <div>
-      <div className={"flex-row flex items-center mb-4 gap-5"}>
-        选择题类型(必填)
-        <Select
-          defaultValue={"单选"}
-          options={[
-            {
-              label: "单选",
-              value: "单选",
-            },
-            {
-              label: "多选",
-              value: "多选",
-            },
-          ]}
-        />
-      </div>
+      {/*<div className={"flex-row flex items-center mb-4 gap-5"}>*/}
+      {/*  选择题类型(必填)*/}
+      {/*  <Select*/}
+      {/*    defaultValue={"单选"}*/}
+      {/*    options={[*/}
+      {/*      {*/}
+      {/*        label: "单选",*/}
+      {/*        value: "单选",*/}
+      {/*      },*/}
+      {/*      {*/}
+      {/*        label: "多选",*/}
+      {/*        value: "多选",*/}
+      {/*      },*/}
+      {/*    ]}*/}
+      {/*  />*/}
+      {/*</div>*/}
       {options.map((option, index) => {
         return (
           <CustomOption
@@ -160,7 +161,7 @@ const QuestionOptions = forwardRef(({ ...props }, ref) => {
       <div
         onClick={() => {
           if (options.length > 5) {
-            message.warning("设置的选项不可以超过5个");
+            // message.warning("设置的选项不可以超过5个");
             return;
           }
           // 取到当前 state 中 最新的一个字母的下一个
@@ -182,7 +183,7 @@ const QuestionOptions = forwardRef(({ ...props }, ref) => {
           ]);
         }}
         className={
-          "bg-gray-100 w-1/2 rounded-xl flex justify-center items-center p-3 gap-2 mb-5"
+          "bg-secondary w-1/2 rounded-xl flex justify-center items-center p-3 gap-2 mb-5"
         }
       >
         <PlusOutlined />

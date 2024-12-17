@@ -1,5 +1,6 @@
 class SoupBunHelper {
   _navigate = null;
+  constructor() {}
 
   setNavigate(navigate) {
     this._navigate = navigate;
