@@ -41,7 +41,7 @@ const Question = () => {
                   }
                 >
                   <div className={"flex flex-row justify-center items-center"}>
-                    <Avatar className={"h-10 w-10 p-2"}>
+                    <Avatar className={"h-10 w-10 p-2 bg-gray-50"}>
                       <AvatarImage
                         src="/public/icon/gapFill.svg"
                         alt="@shadcn"
@@ -54,12 +54,10 @@ const Question = () => {
                 </Card>
                 <Card
                   onClick={() => {}}
-                  className={
-                    "p-5 flex flex-row justify-between items-center hover:bg-blue-50"
-                  }
+                  className={"p-5 flex flex-row justify-between items-center "}
                 >
                   <div className={"flex flex-row justify-center items-center"}>
-                    <Avatar className={"h-10 w-10 p-2 bg-gray-100"}>
+                    <Avatar className={"h-10 w-10 p-2 bg-gray-50"}>
                       <AvatarImage
                         src="/public/icon/choiceQuestion.svg"
                         alt="@shadcn"

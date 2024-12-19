@@ -8,8 +8,7 @@ import QuillEditor from "@/components/common/quillEditor.jsx";
 import { Delta } from "quill";
 import QuestionOptions from "@/components/question/QuestionOptions.jsx";
 import { useToast } from "@/hooks/use-toast.ts";
-import { ToastAction } from "@/components/ui/toast";
-import soupBunHelper from "@/SoupBunHelper.js";
+import { Input } from "@/components/ui/input";
 
 const NewQuestion = () => {
   const { toast } = useToast();
@@ -44,29 +43,33 @@ const NewQuestion = () => {
           className={`${questionType === QuestionType.choice ? "text-white" : "bg-gray-50 text-black hover:text-white"}`}
           onClick={() => {
             setQuestionType(QuestionType.choice);
-            soupBunHelper.toastInfo("hahahha");
-            // toast({
-            //   title: "Scheduled: Catch up ",
-            //   description: "Friday, February 10, 2023 at 5:57 PM",
-            // });
+            toast({
+              variant: "destructive",
+              title: "暂不支持",
+              description: "选择题功能暂未开放",
+            });
           }}
         >
           选择题
         </Button>
       </div>
       <Separator className={"mb-5"} />
-      <div>
-        <p className={"text-sm mb-2 font-bold"}>题目描述</p>
-        <div className={"h-60 w-1/2 mb-5"}>
+      <div className={"w-1/2 my-4"}>
+        <p className={"text-sm mb-2 font-bold"}>题目标题</p>
+        <Input></Input>
+      </div>
+      <div className={"w-1/2 my-4"}>
+        <p className={"text-sm font-bold"}>题目描述</p>
+        <div className={"h-60 mb-5"}>
           <QuillEditor
             ref={editorRef}
             readOnly={false}
             defaultValue={new Delta()}
           ></QuillEditor>
         </div>
-        <div className={"mb-2 w-1/2 text-sm font-bold"}>
-          设置选项和正确答案(必填)
-        </div>
+      </div>
+      <div className={"w-1/2 my-4"}>
+        <div className={"text-sm font-bold"}>设置选项和正确答案(必填)</div>
         <QuestionOptions></QuestionOptions>
       </div>
     </PageContainer>

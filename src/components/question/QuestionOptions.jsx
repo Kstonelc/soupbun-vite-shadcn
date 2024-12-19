@@ -15,9 +15,7 @@ const CustomOption = ({
   const isChecked = params.isChecked;
   return (
     <div
-      className={
-        "border w-1/2 rounded-xl flex justify-start flex-col p-3 gap-2 mb-3"
-      }
+      className={"border rounded-xl flex justify-start flex-col p-3 gap-2 mb-3"}
     >
       <div className={"flex justify-between px-2"}>
         <div>选项{name}</div>
@@ -183,7 +181,7 @@ const QuestionOptions = forwardRef(({ ...props }, ref) => {
           ]);
         }}
         className={
-          "bg-secondary w-1/2 rounded-xl flex justify-center items-center p-3 gap-2 mb-5"
+          "bg-secondary rounded-xl flex justify-center items-center p-3 gap-2 mb-5"
         }
       >
         <PlusOutlined />

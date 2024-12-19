@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Command } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { NavMain } from "./navMain.jsx";
 import { NavSecondary } from "./navSecondary.jsx";
@@ -20,21 +20,21 @@ import { ModeToggle } from "@/components/common/modeToogle";
 
 export function AppSidebar({ ...props }) {
   return (
-    <Sidebar variant="inset" {...props}>
+    <Sidebar variant="sidebar" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem
             className={"flex flex-row justify-between items-center"}
           >
             <SidebarMenuButton size="lg" asChild>
-              <a href="/">
+              <Link className={"justify-center"} to={"/"}>
                 <Avatar className="h-8 w-4/5 rounded-lg">
                   <AvatarImage src="/public/icon/soupbun.svg" alt="@shadcn" />
                   <AvatarFallback className="rounded-lg">
                     SoupBun
                   </AvatarFallback>
                 </Avatar>
-              </a>
+              </Link>
             </SidebarMenuButton>
             <ModeToggle />
           </SidebarMenuItem>
