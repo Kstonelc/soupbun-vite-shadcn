@@ -80,6 +80,14 @@ const NewQuestion = () => {
         </div>
         <QuestionOptions></QuestionOptions>
       </div>
+      <div className={"w-1/2 my-4"}>
+        <div className={"flex flex-row justify-between"}>
+          <span className={"text-sm font-bold mb-2"}>能力维度(选填)</span>
+          <a href={"https://www.baidu.com"} className={"text-blue-500 text-sm"}>
+            管理能力维度
+          </a>
+        </div>
+      </div>
     </PageContainer>
   );
 };
