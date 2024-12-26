@@ -41,7 +41,7 @@ const Question = () => {
                   }
                 >
                   <div className={"flex flex-row justify-center items-center"}>
-                    <Avatar className={"h-10 w-10 p-2 bg-gray-50"}>
+                    <Avatar className={"h-10 w-10 p-2 bg-blue-50 rounded-sm"}>
                       <AvatarImage
                         src="/public/icon/gapFill.svg"
                         alt="@shadcn"
@@ -57,7 +57,7 @@ const Question = () => {
                   className={"p-5 flex flex-row justify-between items-center "}
                 >
                   <div className={"flex flex-row justify-center items-center"}>
-                    <Avatar className={"h-10 w-10 p-2 bg-gray-50"}>
+                    <Avatar className={"h-10 w-10 p-2 bg-blue-50 rounded-sm"}>
                       <AvatarImage
                         src="/public/icon/choiceQuestion.svg"
                         alt="@shadcn"

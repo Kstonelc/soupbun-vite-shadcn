@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { QuestionType } from "@/Enum.js";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
 import QuillEditor from "@/components/common/quillEditor.jsx";
 import { Delta } from "quill";
 import QuestionOptions from "@/components/question/QuestionOptions.jsx";
@@ -55,11 +56,11 @@ const NewQuestion = () => {
       </div>
       <Separator className={"mb-5"} />
       <div className={"w-1/2 my-4"}>
-        <p className={"text-sm mb-2 font-bold"}>题目标题</p>
+        <p className={"text-sm mb-2 font-bold"}>题目标题(必填)</p>
         <Input></Input>
       </div>
       <div className={"w-1/2 my-4"}>
-        <p className={"text-sm font-bold"}>题目描述</p>
+        <p className={"text-sm font-bold mb-2"}>题目描述(必填)</p>
         <div className={"h-60 mb-5"}>
           <QuillEditor
             ref={editorRef}
@@ -69,7 +70,14 @@ const NewQuestion = () => {
         </div>
       </div>
       <div className={"w-1/2 my-4"}>
-        <div className={"text-sm font-bold"}>设置选项和正确答案(必填)</div>
+        <div className={"flex flex-row justify-between"}>
+          <span className={"text-sm font-bold mb-2"}>
+            设置选项和正确答案(必填)
+          </span>
+          <div className={"flex text-sm"}>
+            多选<Switch className={"ml-1"}></Switch>
+          </div>
+        </div>
         <QuestionOptions></QuestionOptions>
       </div>
     </PageContainer>
