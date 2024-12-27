@@ -16,6 +16,7 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import { Link, useLocation } from "react-router-dom";
+import { Separator } from "@/components/ui/separator";
 
 export function NavMain({ items }) {
   const location = useLocation();
@@ -32,7 +33,10 @@ export function NavMain({ items }) {
           <span className="ml-2">控制台</span>
         </Link>
       </SidebarMenuButton>
-      <SidebarGroupLabel className={"text-sm "}>技术测评</SidebarGroupLabel>
+      {/*<Separator className={"mb-2"} />*/}
+      <SidebarGroupLabel className={"text-sm font-bold"}>
+        技术测评
+      </SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => {
           // const isMainActive = checkIsActive(item);

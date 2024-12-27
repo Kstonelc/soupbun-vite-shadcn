@@ -18,6 +18,11 @@ const routes = {
   },
   navMain: [
     {
+      title: "登录",
+      url: "/login",
+      hide: true,
+    },
+    {
       title: "考场",
       url: "/exam",
       icon: BookCheck,

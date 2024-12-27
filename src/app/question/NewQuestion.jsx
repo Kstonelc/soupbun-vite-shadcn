@@ -10,6 +10,7 @@ import { Delta } from "quill";
 import QuestionOptions from "@/components/question/QuestionOptions.jsx";
 import { useToast } from "@/hooks/use-toast.ts";
 import { Input } from "@/components/ui/input";
+import ProSelect from "@/components/common/select.jsx";
 
 const NewQuestion = () => {
   const { toast } = useToast();
@@ -33,7 +34,7 @@ const NewQuestion = () => {
     <PageContainer>
       <div className={"flex flex-row  h-16 items-center p- rounded-xl gap-4"}>
         <Button
-          className={`${questionType === QuestionType.gapFill ? "text-white" : "bg-gray-50 text-black hover:text-white"}`}
+          className={`${questionType === QuestionType.gapFill ? "text-secondary bg-primary" : "text-primary bg-secondary hover:text-secondary"}`}
           onClick={() => {
             setQuestionType(QuestionType.gapFill);
           }}
@@ -41,7 +42,7 @@ const NewQuestion = () => {
           填空题
         </Button>
         <Button
-          className={`${questionType === QuestionType.choice ? "text-white" : "bg-gray-50 text-black hover:text-white"}`}
+          className={`${questionType === QuestionType.choice ? "text-secondary bg-primary" : "text-primary bg-secondary hover:text-secondary"}`}
           onClick={() => {
             setQuestionType(QuestionType.choice);
             toast({
@@ -87,6 +88,7 @@ const NewQuestion = () => {
             管理能力维度
           </a>
         </div>
+        <ProSelect />
       </div>
     </PageContainer>
   );

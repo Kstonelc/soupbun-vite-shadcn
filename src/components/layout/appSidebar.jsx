@@ -27,8 +27,8 @@ export function AppSidebar({ ...props }) {
             className={"flex flex-row justify-between items-center"}
           >
             <SidebarMenuButton size="lg" asChild>
-              <Link className={"justify-center"} to={"/"}>
-                <Avatar className="h-8 w-4/5 rounded-lg">
+              <Link to={"/"}>
+                <Avatar className="h-7 w-4/5 rounded-lg">
                   <AvatarImage src="/public/icon/soupbun.svg" alt="@shadcn" />
                   <AvatarFallback className="rounded-lg">
                     SoupBun
