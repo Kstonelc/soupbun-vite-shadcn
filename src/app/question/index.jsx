@@ -37,7 +37,7 @@ const Question = () => {
                     );
                   }}
                   className={
-                    "p-5 mb-3 flex flex-row justify-between items-center "
+                    "p-5 mb-3 flex flex-row justify-between items-center"
                   }
                 >
                   <div className={"flex flex-row justify-center items-center"}>
