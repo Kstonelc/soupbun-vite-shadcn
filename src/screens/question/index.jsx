@@ -42,14 +42,19 @@ const Question = () => {
                   }
                 >
                   <div className={"flex flex-row justify-center items-center"}>
-                    <Avatar className={"h-10 w-10 p-2 bg-blue-50 rounded-sm"}>
+                    <Avatar className={"h-14 w-14 p-2  rounded-sm"}>
                       <AvatarImage
                         src="/public/icon/gapFill.svg"
                         alt="@shadcn"
                       />
                       <AvatarFallback>SoupBun</AvatarFallback>
                     </Avatar>
-                    <p className={"ml-5 font-bold"}>填空题</p>
+                    <div className={"ml-5"}>
+                      <p className={"font-bold"}>填空题</p>
+                      <span className={"text-gray-400 text-sm"}>
+                        通过填空的方式考察其对知识的掌握程度
+                      </span>
+                    </div>
                   </div>
                   <ArrowRight></ArrowRight>
                 </Card>
@@ -58,14 +63,19 @@ const Question = () => {
                   className={"p-5 flex flex-row justify-between items-center "}
                 >
                   <div className={"flex flex-row justify-center items-center"}>
-                    <Avatar className={"h-10 w-10 p-2 bg-blue-50 rounded-sm"}>
+                    <Avatar className={"h-14 w-14 p-2 rounded-sm"}>
                       <AvatarImage
                         src="/public/icon/choiceQuestion.svg"
                         alt="@shadcn"
                       />
                       <AvatarFallback>SoupBun</AvatarFallback>
                     </Avatar>
-                    <p className={"ml-5 font-bold"}>选择题</p>
+                    <div className={"ml-5"}>
+                      <p className={"font-bold"}>选择</p>
+                      <span className={"text-gray-400 text-sm"}>
+                        通过单选或多选考察其对知识的掌握程度
+                      </span>
+                    </div>
                   </div>
                   <ArrowRight></ArrowRight>
                 </Card>

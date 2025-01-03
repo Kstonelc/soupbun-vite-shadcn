@@ -10,15 +10,12 @@ import {
   Input,
   CardHeader,
   CardTitle,
-  CardDescription,
   CardContent,
-  Label,
-  CardFooter,
-  Separator,
   Card,
 } from "@/components/ui";
 import { AiOutlineMail, AiOutlineKey } from "react-icons/ai";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -49,13 +46,32 @@ const Register = () => {
     },
   });
 
+  //region 初始化
+
+  useEffect(() => {
+    initialize();
+    return () => {
+      destroy();
+    };
+  }, []);
+
+  const initialize = () => {};
+
+  const destroy = () => {};
+
+  //endregion
+
+  //region 方法
+
   const onSubmit = (values) => {
     // TODO 密码加密
     console.log(values);
   };
 
+  //endregion
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-secondary p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-secondary p-4 bg-grid">
       <Card className="w-full max-w-xl flex flex-col md:flex-row overflow-hidden">
         <div className="md:w-full p-6">
           <CardHeader>

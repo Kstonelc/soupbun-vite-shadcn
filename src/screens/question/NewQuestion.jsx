@@ -7,10 +7,10 @@ import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import QuillEditor from "@/components/common/QuillEditor.jsx";
 import { Delta } from "quill";
-import QuestionOptions from "@/components/question/QuestionOptions.jsx";
 import { useToast } from "@/hooks/use-toast.ts";
 import { Input } from "@/components/ui/input";
 import ProSelect from "@/components/common/ProSelect.jsx";
+import QuestionOptions from "./QuestionOption.jsx";
 
 const NewQuestion = () => {
   const { toast } = useToast();

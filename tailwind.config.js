@@ -68,5 +68,17 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addComponents }) {
+      addComponents({
+        ".bg-grid": {
+          position: "relative",
+          backgroundImage:
+            "linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        },
+      });
+    },
+  ],
 };

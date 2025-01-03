@@ -1,5 +1,13 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { Checkbox, Input, Button } from "@/components/ui";
+import {
+  Checkbox,
+  Input,
+  Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  Label,
+} from "@/components/ui";
 import { AiOutlineDelete, AiOutlinePlus } from "react-icons/ai";
 
 const CustomOption = ({
@@ -26,9 +34,11 @@ const CustomOption = ({
           >
             设置为正确答案
           </Checkbox>
-          <div onClick={() => onDeleteOption(key)}>
-            <AiOutlineDelete color={"red"} size={"20"} />
-          </div>
+          <DeletePopover
+            onDeleteOption={() => {
+              onDeleteOption(key);
+            }}
+          ></DeletePopover>
         </div>
       </div>
       <Input
@@ -36,6 +46,51 @@ const CustomOption = ({
         onChange={(e) => onUpdateOption(key, e.target.value)}
       />
     </div>
+  );
+};
+
+const DeletePopover = ({ onDeleteOption }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <PopoverTrigger asChild>
+        <div>
+          <AiOutlineDelete color={"red"} size={"20"} />
+        </div>
+      </PopoverTrigger>
+      <PopoverContent className="w-60 max-w-full">
+        <div className="grid gap-4">
+          <div className="space-y-2">
+            <h4 className="font-medium leading-none break-words">
+              确认删除这个选项吗?
+            </h4>
+            <p className="text-sm text-muted-foreground break-words">
+              注意: 删除如需要回复,需重新添加
+            </p>
+          </div>
+          <div className="flex flex-row gap-3">
+            <Button
+              size="sm"
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              取消
+            </Button>
+            <Button
+              className="bg-red-500 hover:bg-red-600 text-white"
+              size="sm"
+              onClick={() => {
+                onDeleteOption();
+                setIsOpen(false);
+              }}
+            >
+              确认删除
+            </Button>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
   );
 };
 

@@ -15,7 +15,7 @@ import soupBunHelper from "@/SoupBunHelper.js";
 
 const Login = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-secondary p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-secondary p-4 bg-grid">
       <div
         className={
           "flex flex-row justify-center items-center absolute top-10 right-10"
