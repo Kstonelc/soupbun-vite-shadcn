@@ -55,16 +55,14 @@ const QuillEditor = forwardRef(
           imageResize: {},
         },
       });
-      document.querySelector(".ql-container").style.border =
-        "1px solid #33333333";
+      // document.querySelector(".ql-toolbar").style.border =
+      //   "1px solid #33333342";
+      document.querySelector(".ql-toolbar").style.borderTopLeftRadius = "5px";
+      document.querySelector(".ql-toolbar").style.borderTopRightRadius = "5px";
       document.querySelector(".ql-container").style.borderBottomLeftRadius =
         "5px";
       document.querySelector(".ql-container").style.borderBottomRightRadius =
         "5px";
-      document.querySelector(".ql-toolbar").style.border =
-        "1px solid #33333333";
-      document.querySelector(".ql-toolbar").style.borderTopLeftRadius = "5px";
-      document.querySelector(".ql-toolbar").style.borderTopRightRadius = "5px";
       // const customButton = toolbar.container.querySelector('.ql-uploadImage');
       // customButton.innerHTML = '<span>🌄</span>';
       ref.current = quill;
