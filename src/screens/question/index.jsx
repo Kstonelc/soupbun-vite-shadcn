@@ -1,5 +1,6 @@
 import { PageContainer } from "@/components/ui/pageContainer";
 import { Button } from "@/components/ui/button";
+import { Loader } from "@/components/ui";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProDialog, ProTable } from "@/components/common";
 import { Card } from "@/components/ui/card";
@@ -77,6 +78,7 @@ const Question = () => {
           <ProTable></ProTable>
         </TabsContent>
         <TabsContent value="globalQuestion"></TabsContent>
+        <Loader></Loader>
       </Tabs>
     </PageContainer>
   );

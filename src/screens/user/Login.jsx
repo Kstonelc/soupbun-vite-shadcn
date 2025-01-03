@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/Separator";
 import { AiFillWechat } from "react-icons/ai";
+import soupBunHelper from "@/SoupBunHelper.js";
 
 const Login = () => {
   return (
@@ -21,7 +22,13 @@ const Login = () => {
         }
       >
         <span className="text-sm mr-2">没有账号?</span>
-        <Button size={"xs"} className={"px-2 py-1"}>
+        <Button
+          size={"xs"}
+          className={"px-2 py-1"}
+          onClick={() => {
+            soupBunHelper.navigate("/register");
+          }}
+        >
           去注册
         </Button>
       </div>

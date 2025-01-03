@@ -12,11 +12,13 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui";
 
 import routes from "@/config/routes";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ModeToggle } from "@/components/common/modeToogle";
+import { ModeToggle } from "@/components/common";
 
 export function AppSidebar({ ...props }) {
   return (

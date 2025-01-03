@@ -23,6 +23,11 @@ const routes = {
       hide: true,
     },
     {
+      title: "注册",
+      url: "/register",
+      hide: true,
+    },
+    {
       title: "考场",
       url: "/exam",
       icon: BookCheck,

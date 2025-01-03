@@ -1,7 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
+import { Checkbox, Input, Button } from "@/components/ui";
+import { AiOutlineDelete, AiOutlinePlus } from "react-icons/ai";
 
 const CustomOption = ({
   params,
@@ -28,7 +27,7 @@ const CustomOption = ({
             设置为正确答案
           </Checkbox>
           <div onClick={() => onDeleteOption(key)}>
-            <DeleteOutlined />
+            <AiOutlineDelete color={"red"} size={"20"} />
           </div>
         </div>
       </div>
@@ -113,22 +112,6 @@ const QuestionOptions = forwardRef(({ ...props }, ref) => {
   // endregion
   return (
     <div>
-      {/*<div className={"flex-row flex items-center mb-4 gap-5"}>*/}
-      {/*  选择题类型(必填)*/}
-      {/*  <Select*/}
-      {/*    defaultValue={"单选"}*/}
-      {/*    options={[*/}
-      {/*      {*/}
-      {/*        label: "单选",*/}
-      {/*        value: "单选",*/}
-      {/*      },*/}
-      {/*      {*/}
-      {/*        label: "多选",*/}
-      {/*        value: "多选",*/}
-      {/*      },*/}
-      {/*    ]}*/}
-      {/*  />*/}
-      {/*</div>*/}
       {options.map((option, index) => {
         return (
           <CustomOption
@@ -184,8 +167,10 @@ const QuestionOptions = forwardRef(({ ...props }, ref) => {
           "bg-secondary rounded-xl flex justify-center items-center p-3 gap-2 mb-5"
         }
       >
-        <PlusOutlined />
-        新增选项
+        <Button size={"sm"}>
+          <AiOutlinePlus />
+          新增选项
+        </Button>
       </div>
     </div>
   );
