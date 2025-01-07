@@ -18,6 +18,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { registerUser } from "../../apis/user";
 
 const Register = () => {
   //region 定义表单字段校验
@@ -63,9 +64,10 @@ const Register = () => {
 
   //region 方法
 
-  const onSubmit = (values) => {
+  const onSubmit = async (values) => {
     // TODO 密码加密
     console.log(values);
+    await registerUser(values);
   };
 
   //endregion

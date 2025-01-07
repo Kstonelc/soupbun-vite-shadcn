@@ -1,6 +1,7 @@
 /*
  * Axios API 请求封装
  */
+
 import axios from "axios";
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -12,6 +13,10 @@ const apiClient = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  /*
+   * 服务器必须明确在响应头中设置 Access-Control-Allow-Credentials: true，同时，Access-Control-Allow-Origin 不能设置为 *
+   * */
+  // withCredentials: true,
 });
 
 // 请求拦截器
