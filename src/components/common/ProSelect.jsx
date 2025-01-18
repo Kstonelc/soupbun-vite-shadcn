@@ -1,45 +1,33 @@
-import { useState } from "react";
 import {
   Select,
   SelectTrigger,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select.tsx";
+  SelectValue,
+  FormControl,
+} from "@/components/ui";
 
-const ProSelect = () => {
-  const [selectedItems, setSelectedItems] = useState([]);
-
-  const handleSelect = (value) => {
-    setSelectedItems((prev) =>
-      prev.includes(value)
-        ? prev.filter((item) => item !== value)
-        : [...prev, value],
-    );
-  };
-
+const ProSelect = ({
+  placeHolder = "请选择",
+  value,
+  options = [],
+  onChange,
+}) => {
   return (
-    <Select>
-      <SelectTrigger>
-        {selectedItems.length > 0 ? selectedItems.join(", ") : "Select items"}
-      </SelectTrigger>
+    <Select onValueChange={onChange} defaultValue={value}>
+      <FormControl>
+        <SelectTrigger>
+          <SelectValue placeholder={placeHolder} />
+        </SelectTrigger>
+      </FormControl>
       <SelectContent>
-        {["Option 1", "Option 2", "Option 3"].map((option) => (
-          <SelectItem
-            key={option}
-            value={option}
-            onClick={() => handleSelect(option)}
-          >
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <input
-                type="checkbox"
-                checked={selectedItems.includes(option)}
-                readOnly
-                style={{ marginRight: "8px" }}
-              />
+        {options.map((option) => {
+          return (
+            <SelectItem key={option} value={option}>
               {option}
-            </div>
-          </SelectItem>
-        ))}
+            </SelectItem>
+          );
+        })}
       </SelectContent>
     </Select>
   );

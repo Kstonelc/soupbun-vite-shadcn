@@ -9,8 +9,9 @@ import QuillEditor from "@/components/common/QuillEditor.jsx";
 import { Delta } from "quill";
 import { useToast } from "@/hooks/use-toast.ts";
 import { Input } from "@/components/ui/input";
-import ProSelect from "@/components/common/ProSelect.jsx";
+import ProMultiSelect from "@/components/common/ProMultiSelect.jsx";
 import QuestionOptions from "./QuestionOption.jsx";
+import ProSelect from "@/components/common/ProSelect.jsx";
 
 const NewQuestion = () => {
   const { toast } = useToast();
@@ -87,6 +88,12 @@ const NewQuestion = () => {
           <a href={"https://www.baidu.com"} className={"text-blue-500 text-sm"}>
             管理能力维度
           </a>
+        </div>
+        <ProMultiSelect />
+      </div>
+      <div className={"w-1/2 my-4"}>
+        <div className={"flex flex-row justify-between"}>
+          <span className={"text-sm font-bold mb-2"}>难度(选填)</span>
         </div>
         <ProSelect />
       </div>

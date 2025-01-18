@@ -66,7 +66,7 @@ const Register = () => {
 
   const onSubmit = async (values) => {
     // TODO 密码加密
-    console.log(values);
+    console.log(111, values);
     await registerUser(values);
   };
 

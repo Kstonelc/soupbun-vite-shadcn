@@ -24,3 +24,4 @@ export * from "./toaster.tsx";
 export * from "./tooltip.tsx";
 export * from "./form.tsx";
 export * from "./popover.tsx";
+export * from "./muti-select.tsx";
