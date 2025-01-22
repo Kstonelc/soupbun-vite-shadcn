@@ -95,7 +95,7 @@ const NewQuestion = () => {
         <div className={"flex flex-row justify-between"}>
           <span className={"text-sm font-bold mb-2"}>难度(选填)</span>
         </div>
-        <ProSelect />
+        {/*<ProSelect />*/}
       </div>
     </PageContainer>
   );

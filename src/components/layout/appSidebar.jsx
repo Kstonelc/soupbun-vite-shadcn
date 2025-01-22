@@ -26,16 +26,15 @@ export function AppSidebar({ ...props }) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem
-            className={"flex flex-row justify-between items-center"}
+            className={"flex flex-row justify-start items-center"}
           >
             <SidebarMenuButton size="lg" asChild>
               <Link to={"/"}>
-                <Avatar className="h-7 w-4/5 rounded-lg">
+                <Avatar className="h-7 w-7 rounded-full justify-start">
                   <AvatarImage src="/public/icon/soupbun.svg" alt="@shadcn" />
-                  <AvatarFallback className="rounded-lg">
-                    SoupBun
-                  </AvatarFallback>
+                  <AvatarFallback className="rounded-lg">Bun</AvatarFallback>
                 </Avatar>
+                <span className={"text-lg font-bold"}>SoupBun</span>
               </Link>
             </SidebarMenuButton>
             <ModeToggle />
